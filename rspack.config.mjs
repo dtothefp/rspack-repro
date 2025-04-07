@@ -29,6 +29,19 @@ const config = {
   experiments: {
     css: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: path.resolve('./src/example-loader'),
+      },
+    ],
+  },
+  resolveLoader: {
+    alias: {
+      "import-module-example": path.resolve('./src/import-module-example-loader')
+    }
+  },
 };
 
 export default config;
